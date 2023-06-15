@@ -90,3 +90,6 @@ a = q.deQueue()
 
 console.log(a)
 
+
+module.exports = Queue
+
