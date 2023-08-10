@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="/node_modules/axios/dist/axios.js"></script>
+    <script>
+        axios({
+            method: 'POST',
+            url: 'http://localhost:3000/graphql',
+            data: {
+                // 查询语句要放到query中
+                query: `
+                    mutation addTeacher($teacher:TeacherInput){
+                        addTeacher(teacher:$teacher){
+                            name,
+                            title
+                        }
+                    }
+                `,
+                variables: {
+                    teacher:{name:"zs",title:"员工"}
+                }
+            }
+        }).then(data => {
+            console.log(data)
+        })
+
+
+        // axios({
+        //     method: 'POST',
+        //     url: 'http://localhost:3000/graphql',
+        //     data: {
+        //         // 查询语句要放到query中
+        //         query: `
+        //             query getTeacher($id:ID,$name:String){
+        //                 name,
+        //                 age,
+        //                 teacher(id:$id,name:$name){
+        //                     title
+        //                     name
+        //                     home{
+        //                         address,
+        //                     }
+        //                 }
+        //             }
+        //         `,
+        //         variables:{
+        //             id:'001',
+        //             name:'jw'
+        //         }
+        //     }
+        // }).then(data => {
+        //     console.log(data)
+        // })
+
+
+        // axios({
+        //     method: 'POST',
+        //     url: 'http://localhost:3000/graphql',
+        //     data: {
+        //         // 查询语句要放到query中
+        //         query: `
+        //             query getSchool{
+        //                 schoolName:name,
+        //                 isOpen,
+        //                 id
+        //             }
+        //         `
+        //     }
+        // }).then(data => {
+        //     console.log(data)
+        // })
+        // 直接打开html 是file:协议
+
+
+        // node中的进程 forck childProcess cluster.
+    </script>
+</body>
+
+</html>
