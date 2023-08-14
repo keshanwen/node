@@ -1,11 +1,12 @@
-const Koa = require('koa');
-const app = new Koa();
+import Koa = require('koa')
+import index from './routers/index'
 
-// response
-app.use((ctx: any) => {
-  ctx.body = 'Hello Koa';
-});
 
-app.listen(3456, () => {
-  console.log('listen 3456 OK');
-});
+const app = new Koa()
+
+
+app.use(index.routes())
+
+app.listen(1234, () => {
+  console.log('listen 1234 ok')
+})
