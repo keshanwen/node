@@ -1,0 +1,36 @@
+<!--
+1.使用别人编写好的头文件细节
+安装好别人编写好的头文件之后 @type/xxx
+- 如果是使用ES Module导出, 那么使用ES Module导入
+- 如果是使用Node Module导出, 那么使用Node Module导入
+- 如果是使用TS Module导出, 那么使用TS Module导入, 但是也可以使用ES Module或者Node Module导入
+-->
+<!--
+1.ES6模块
+1.1分开导入导出
+export xxx;
+import {xxx} from "path";
+
+1.2一次性导入导出
+export {xxx, yyy, zzz};
+import {xxx, yyy, zzz} from "path";
+
+1.3默认导入导出
+export default xxx;
+import xxx from "path";
+-->
+<!--
+2.Node模块
+1.1通过exports.xxx = xxx导出
+通过const xxx = require("path");导入
+通过const {xx, xx} = require("path");导入
+
+1.2通过module.exports.xxx = xxx导出
+通过const xxx = require("path");导入
+通过const {xx, xx} = require("path");导入
+-->
+<!--
+ES6的模块和Node的模块是不兼容的, 所以TS为了兼容两者就推出了
+export = xxx;
+import xxx = require('path');
+-->

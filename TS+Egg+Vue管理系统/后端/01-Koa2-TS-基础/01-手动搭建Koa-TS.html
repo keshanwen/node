@@ -1,0 +1,15 @@
+<!--
+1.创建Node项目
+npm init --y
+2.生成配置tsconfig.json
+npm install typescript ts-node --save-d
+tsc --init
+3.安装相关依赖
+npm install koa --save
+npm install @types/node @types/koa --save-d
+npm install cross-env --save
+npm install nodemon --save-d
+4.配置package.json
+"dev": "cross-env NODE_ENV=dev nodemon -e ts --exec ts-node app.ts"
+5.编写koa代码
+-->

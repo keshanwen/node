@@ -1,0 +1,29 @@
+<!--
+https://eggjs.org/zh-cn/tutorials/sequelize.html
+1.安装 sequelize-cli
+npm install --save-dev sequelize-cli
+2.编写.sequelizerc 配置文件
+'use strict';
+const path = require('path');
+module.exports = {
+  config: path.join(__dirname, 'database/config.json'),
+  'migrations-path': path.join(__dirname, 'database/migrations'),
+  'seeders-path': path.join(__dirname, 'database/seeders'),
+  'models-path': path.join(__dirname, 'app/model'),
+};
+3.初始化配置文件
+npx sequelize init:config
+4.修改配置文件
+// database/config.json -> config/config.[env].ts
+5.根据配置文件创建数据库
+npx sequelize db:create
+set NODE_ENV=production
+npx sequelize db:create
+6.创建迁移文件
+npx sequelize migration:generate --name=users
+7.修改迁移文件为TS语法
+8.在package.json中新增执行TS迁移文件脚本
+"sequelize-cli-ts": "node -r ts-node/register ./node_modules/sequelize-cli/lib/sequelize"
+9.执行迁移文件
+npm run sequelize-cli-ts db:migrate
+-->
