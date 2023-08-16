@@ -1,0 +1,20 @@
+{
+  "name": "fuzhi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "egg-bin dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "egg": "^3.17.4",
+    "egg-view-ejs": "^3.0.0"
+  },
+  "devDependencies": {
+    "egg-bin": "^6.4.2"
+  }
+}
