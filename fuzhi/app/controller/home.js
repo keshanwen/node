@@ -30,6 +30,23 @@ class HomeController extends Controller {
     let data = await this.ctx.service.home.findNews();
     this.ctx.body = data;
   }
+  async setCookie() {
+    this.ctx.cookies.set('name', 'lnj', {
+      path: '/',
+      maxAge: 24 * 60 * 60 * 1000,
+      httpOnly: true,
+      signed: true,
+      encrypt: true
+    })
+    this.ctx.body = '设置成功'
+  }
+  async getCookie() {
+    let cookie = this.ctx.cookies.get('name', {
+      signed: true,
+      encrypt: true
+    })
+    this.ctx.body = `获取 cookie 成功  ${cookie}`
+  }
 }
 
 module.exports = HomeController

@@ -7,4 +7,6 @@ module.exports = app => {
   router.post('/login', controller.home.getBody);
   router.get('/home', controller.home.getHome)
   router.get('/news', controller.home.getNews);
+  router.get('/getCookie', controller.home.getCookie)
+  router.get('/setCookie', controller.home.setCookie)
 }
