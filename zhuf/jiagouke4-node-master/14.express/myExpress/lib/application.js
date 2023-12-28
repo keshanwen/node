@@ -6,8 +6,8 @@ function Application() {
   this.router = new Router()
 }
 
-Application.prototype.get = function (pathname, handler) {
-  this.router.get(pathname, handler)
+Application.prototype.get = function (pathname, ...handlers) {
+  this.router.get(pathname, handlers)
 }
 
 Application.prototype.listen = function () {
