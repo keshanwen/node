@@ -25,7 +25,7 @@ str+=`
 
 }
 const res = a({
-    arr: [1,2,3]
+    arr: ['a','b','c']
 })
 
 console.log(res)
