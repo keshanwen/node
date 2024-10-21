@@ -1,3 +1,5 @@
-import { a } from './a.js'
+import { m } from './a.js'
 
-console.log(a)
+// https://fcqian.blog.csdn.net/article/details/121950458
+
+console.log(m)
